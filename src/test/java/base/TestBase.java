@@ -11,9 +11,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import extentlisteners.ExtentListeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase  {
@@ -42,6 +44,20 @@ public class TestBase  {
 		
 		driver.get(Constants.URL);
 		driver.manage().window().maximize();
+
+		
+	}
+	
+	
+	public static void click(WebElement element, String elementName) {
+		element.click();
+		ExtentListeners.test.pass("Clicking on element "+elementName);
+		
+	}
+	
+	public static void type(WebElement element, String value, String elementName) {
+		element.sendKeys(value);
+		ExtentListeners.test.pass("Typing in field "+elementName);
 
 		
 	}

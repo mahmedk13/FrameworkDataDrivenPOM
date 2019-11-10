@@ -31,12 +31,23 @@ public class FlightSearchPage extends TestBase {
 		
 	}
 	
-	public void searchFlight(String Origin, String destination, String departDate, String returnDate) {
-		originEle.sendKeys(Origin);
-		departDateEle.sendKeys(departDate);
-		returnDateEle.sendKeys(returnDate);
-		destinationEle.sendKeys(destination);
-		submitBtn.click();
+	public FlightSearchResultsPage searchFlight(String Origin, String destination, String departDate, String returnDate) {
+		//originEle.sendKeys(Origin);
+		type(originEle, Origin, "Going to");
+		//departDateEle.sendKeys(departDate);
+		type(departDateEle, departDate, "Departure Date");
+
+		//returnDateEle.sendKeys(returnDate);
+		type(returnDateEle, returnDate, "Return Date");
+
+		//destinationEle.sendKeys(destination);
+		type(destinationEle, destination, "Destination field");
+		
+		
+		//submitBtn.click();
+		click(submitBtn, "Search Button");
+		
+		return new FlightSearchResultsPage();
 		
 	}
 	

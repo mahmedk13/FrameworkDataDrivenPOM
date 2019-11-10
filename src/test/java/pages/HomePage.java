@@ -22,12 +22,15 @@ public class HomePage extends TestBase {
 	
 	
 	public FlightSearchPage navigateToFlight() {
-		FlightTab.click();
+		//FlightTab.click();
+		click(FlightTab, "Flight Tab");
 		return new FlightSearchPage();
 	}
 	
 	public HotelSearchPage navigateToHotel() {
-		hotelTab.click();
+		//hotelTab.click();
+		click(hotelTab, "Hotel Tab");
+
 		return new HotelSearchPage();
 	}
 	
